@@ -17,6 +17,8 @@
  */
 package org.apache.cassandra.gms;
 
+import javax.management.openmbean.OpenDataException;
+import javax.management.openmbean.TabularData;
 import java.net.UnknownHostException;
 import java.util.Map;
 
@@ -37,4 +39,6 @@ public interface FailureDetectorMBean
     public int getDownEndpointCount();
 
     public int getUpEndpointCount();
+
+    public TabularData getPhiValues() throws OpenDataException;
 }
